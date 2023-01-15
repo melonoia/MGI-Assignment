@@ -32,41 +32,46 @@ public class GameManager : MonoBehaviour
 
     public void NumberClick(Button b)
     {
+
 		if(b.name == ".")
-		{
-			if(nps)
-			{
+		{			
+			if(!nps)
+			{			
+				b.enabled = false;
+				nps = true;
+			}
+			else{
+				nps = false;
 				answerText.text = answerText.text + b.name;
-				nps = false;		
 			}
 		}
 		else
 		{
+			GameObject.Find(".").GetComponent<Button>().enabled = true;				
 			answerText.text += b.name;
-			nps = true;
 		}
+		
     }
     
     public void OperationClick(Button o)
     {			
 			operation = o.name;	
+			string ans = answerText.text;
+			ans += operation;	
 			
-			if(ops == false)
-			{
-					
-					if(firstNumber != 0f)
-					{
-						o.enabled = true;
+			if(!ans.StartsWith(operation))
+			{		
 						firstNumber = float.Parse(answerText.text);   		
 						answerText.text += operation;
 						inputText.text = answerText.text; 
 						answerText.text = "";
 						GameObject.Find("Equals").GetComponent<Button>().enabled = true;				
 						ops = true;
-					}
-					o.enabled = false;
-					
 			} 
+					else
+					{
+						inputText.text = "invalid input";
+					}
 		
    }
     
