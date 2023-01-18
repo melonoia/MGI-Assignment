@@ -1,0 +1,11 @@
+{
+  version: 1,
+  mediaFileName: 'Car.wav',
+  cutSegments: [
+    {
+      start: 0.006358848297183857,
+      end: 3.637261160949868,
+      name: '',
+    },
+  ],
+}

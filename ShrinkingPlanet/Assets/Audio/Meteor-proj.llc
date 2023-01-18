@@ -1,0 +1,11 @@
+{
+  version: 1,
+  mediaFileName: 'Meteor.wav',
+  cutSegments: [
+    {
+      start: 0.006038249549823339,
+      end: 2.910436194117644,
+      name: '',
+    },
+  ],
+}
